@@ -1,0 +1,4 @@
+export const SET_PAGE_HEADING = 'SET_PAGE_HEADING'
+export const GET_PAGE_HEADING = 'GET_PAGE_HEADING'
+
+export const GET_TODOS = 'GET_TODOS'
