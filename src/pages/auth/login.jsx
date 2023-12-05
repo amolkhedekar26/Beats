@@ -25,7 +25,7 @@ export const LoginPage = props => {
         onSubmit={e => e.preventDefault()}
         noValidate
         autoComplete="off"
-        className="container form"
+        className="form-container"
       >
         <h1 className="mb-4 text-4xl  leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl dark:text-white">
           <span className="text-blue-600 dark:text-blue-500 font-extrabold">
@@ -52,14 +52,14 @@ export const LoginPage = props => {
             {/* <a href="/signup" className="text-blue-600 ml-2">
               Sign Up
             </a> */}
-            <Link to="/signup" className="text-blue-600 ml-2">
+            <Link to="/signup" className="text-blue-600 ml-2 rainbow">
               Sign Up
             </Link>
           </p>
 
           <button
             onClick={onSubmit}
-            className="p-3 px-12 rounded-full bg-blue-600 font-semibold text-white flex  gap-1 hover:bg-blue-800"
+            className="p-3 ml-4 px-12 rounded-full bg-blue-600 font-semibold text-white flex  gap-1 hover:bg-blue-800"
           >
             Login
           </button>

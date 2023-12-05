@@ -59,7 +59,7 @@ export const SignupPage = () => {
         <div className="mt-5 flex justify-between items-center">
           <p>
             Already have an account?
-            <Link to="/login" className="text-blue-600 ml-2">
+            <Link to="/login" className="text-blue-600 ml-2 rainbow">
               Log In
             </Link>
           </p>

@@ -1,15 +1,25 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, Route, Routes, useNavigate } from 'react-router-dom'
 import { Navigation } from '../Navigation'
 import { BiHomeSmile, BiUser } from 'react-icons/bi'
 import { MdWorkspaces } from 'react-icons/md'
 import { SlCalender } from 'react-icons/sl'
 import { FiSettings } from 'react-icons/fi'
+import { DashboardPage } from '../../pages/dashboard/dashboard'
+import TeamsPage from '../../pages/teams/teams'
+import { CalenderPage } from '../../pages/calender/calender'
+import { SettingsPage } from '../../pages/settings/settings'
+import { ProfilePage } from '../../pages/profile/profile'
 
 const MasterLayout = props => {
+  const navigate = useNavigate()
+  useEffect(() => {
+    navigate('/dashboard')
+  }, [])
   return (
     <div className="master-container">
       <Navigation />
+
       <div className="sidebar z-50">
         <ul className="sidebar-links rounded-xl">
           {/* <li className="link flex border-b-4 border-transparent  items-center justify-between gap-2 p-5 transition-all hover:border-b-4 hover:border-blue-600 hover:text-blue-600 hover:bg-gray-50">
@@ -42,7 +52,7 @@ const MasterLayout = props => {
                       className="link flex border-b-4 border-transparent  items-center justify-between gap-2 p-5 transition-all hover:border-b-4 hover:border-blue-600 hover:text-blue-600 hover:bg-gray-50"
                     > */}
                 <Link
-                  className="link flex border-r-4 border-transparent  items-center justify-between gap-2 p-5 transition-all hover:border-r-4 hover:border-blue-600 hover:text-blue-600 hover:bg-gray-50 hover:rounded-xl"
+                  className="sidebar-rainbow link flex border-r-4 border-transparent  items-center justify-between gap-2 p-5 transition-all hover:border-r-4 hover:border-blue-600 hover:text-blue-600 hover:bg-gray-50"
                   to={href}
                 >
                   <div>
@@ -57,14 +67,23 @@ const MasterLayout = props => {
             )
           })}
         </ul>
-        <div className="main-content">{props.children}</div>
+        <div className="main-content">
+          <Routes>
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/teams" element={<TeamsPage />} />
+            <Route path="/calender" element={<CalenderPage />} />
+            <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+          </Routes>
+          {props.children}
+        </div>
       </div>
     </div>
   )
 }
 
 const items = [
-  { title: 'Home', Icon: BiHomeSmile, href: '' },
+  { title: 'Dashboard', Icon: BiHomeSmile, href: '/dashboard' },
   { title: 'Teams', Icon: MdWorkspaces, href: '/teams' },
   { title: 'Calender', Icon: SlCalender, href: '/calender' },
   { title: 'Settings', Icon: FiSettings, href: '/settings' },
