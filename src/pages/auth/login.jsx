@@ -34,7 +34,7 @@ export const LoginPage = props => {
           </span>
           here
         </h1>
-        <h4 className="mb-4 text-3xl  leading-none tracking-tight text-gray-900 md:text-5xl lg:text-3xl dark:text-white">
+        <h4 className="mb-4 text-3xl  leading-none tracking-tight text-gray-900 md:text-5xl lg:text-xl dark:text-white">
           Let's get in
         </h4>
         {success && (

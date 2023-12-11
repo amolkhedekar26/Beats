@@ -1,10 +1,22 @@
-import React, { useEffect } from 'react'
-import { Link, Route, Routes, useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, NavLink, Route, Routes, useNavigate } from 'react-router-dom'
 import { Navigation } from '../Navigation'
 import { BiHomeSmile, BiUser } from 'react-icons/bi'
+import { RiUserLine, RiUserFill } from 'react-icons/ri'
+
 import { MdWorkspaces } from 'react-icons/md'
 import { SlCalender } from 'react-icons/sl'
+import { BsCalendar2Day } from 'react-icons/bs'
+import { BsCalendar2DayFill } from 'react-icons/bs'
+
 import { FiSettings } from 'react-icons/fi'
+
+import { RiSettings4Line } from 'react-icons/ri'
+import { RiSettings5Fill } from 'react-icons/ri'
+import { MdOutlineDashboard } from 'react-icons/md'
+import { MdDashboard } from 'react-icons/md'
+
+import { MdWorkspacesOutline } from 'react-icons/md'
 import { DashboardPage } from '../../pages/dashboard/dashboard'
 import TeamsPage from '../../pages/teams/teams'
 import { CalenderPage } from '../../pages/calender/calender'
@@ -16,6 +28,7 @@ const MasterLayout = props => {
   useEffect(() => {
     navigate('/dashboard')
   }, [])
+
   return (
     <div className="master-container">
       <Navigation />
@@ -43,7 +56,7 @@ const MasterLayout = props => {
             <Link to={'/user'}>User</Link>
           </li> */}
           {items.map((item, idx) => {
-            const { title, href, Icon } = item
+            const { title, href, HIcon, Icon } = item
             return (
               <li key={title}>
                 {/* <a
@@ -51,7 +64,7 @@ const MasterLayout = props => {
                       href={href}
                       className="link flex border-b-4 border-transparent  items-center justify-between gap-2 p-5 transition-all hover:border-b-4 hover:border-blue-600 hover:text-blue-600 hover:bg-gray-50"
                     > */}
-                <Link
+                <NavLink
                   className="sidebar-rainbow link flex border-r-4 border-transparent  items-center justify-between gap-2 p-5 transition-all hover:border-r-4 hover:border-blue-600 hover:text-blue-600 hover:bg-gray-50"
                   to={href}
                 >
@@ -61,7 +74,7 @@ const MasterLayout = props => {
                   <span className="text-xs link-text transition-all ">
                     {title}
                   </span>
-                </Link>
+                </NavLink>
                 {/* </a> */}
               </li>
             )
@@ -83,11 +96,31 @@ const MasterLayout = props => {
 }
 
 const items = [
-  { title: 'Dashboard', Icon: BiHomeSmile, href: '/dashboard' },
-  { title: 'Teams', Icon: MdWorkspaces, href: '/teams' },
-  { title: 'Calender', Icon: SlCalender, href: '/calender' },
-  { title: 'Settings', Icon: FiSettings, href: '/settings' },
-  { title: 'Profile', Icon: BiUser, href: '/profile' },
+  {
+    title: 'Dashboard',
+    Icon: MdOutlineDashboard,
+    HIcon: MdDashboard,
+    href: '/dashboard',
+  },
+  {
+    title: 'Teams',
+    Icon: MdWorkspacesOutline,
+    HIcon: MdWorkspaces,
+    href: '/teams',
+  },
+  {
+    title: 'Calender',
+    Icon: BsCalendar2Day,
+    HIcon: BsCalendar2DayFill,
+    href: '/calender',
+  },
+  {
+    title: 'Settings',
+    Icon: RiSettings4Line,
+    Hicon: RiSettings5Fill,
+    href: '/settings',
+  },
+  { title: 'Profile', Icon: RiUserLine, HIcon: RiUserFill, href: '/profile' },
   //   { title: 'Shop', Icon: FiShoppingCart, href: '' },
 ]
 

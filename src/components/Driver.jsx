@@ -12,7 +12,7 @@ import { SignupPage } from '../pages/auth/signup'
 import { HomePage } from '../pages/home/home'
 
 const Driver = () => {
-  const [token, setToken] = useState('s')
+  const [token, setToken] = useState('')
   const navigate = useNavigate()
   // useEffect(() => {
   //   if (!token) {

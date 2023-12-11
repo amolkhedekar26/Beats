@@ -32,12 +32,11 @@ export const SignupPage = () => {
       >
         <h1 className="mb-4 text-4xl  leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl dark:text-white">
           <span className="text-blue-600 dark:text-blue-500 font-extrabold">
-            {' '}
-            Sign up{' '}
+            Sign up
           </span>
           here
         </h1>
-        <h4 className="mb-4 text-3xl  leading-none tracking-tight text-gray-900 md:text-5xl lg:text-2xl dark:text-white">
+        <h4 className="mb-4 text-3xl  leading-none tracking-tight text-gray-900 md:text-5xl lg:text-xl dark:text-white">
           Give us few details to get started
         </h4>
         {success && (
