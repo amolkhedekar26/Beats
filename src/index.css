@@ -4,6 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  overflow-x: hidden;
+}
 body {
   font-family: 'Poppins', sans-serif;
   @apply bg-slate-50;
@@ -323,4 +326,43 @@ border-radius: 0 0 16px 16px; */
   background-repeat: no-repeat;
   transition: background-size 400ms;
   background-size: 0 3px, 100% 3px;
+}
+
+@keyframes blinking {
+  0% {
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+  50%{
+    background-color: rgba(255, 255, 255, 0.37);;
+  }
+  100% {
+    background-color: rgb(255, 255, 255);
+  }
+}
+.toast-msg{
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  transition: all 0.3s ease;
+  animation: blinking 3s linear infinite;
+}
+.toast-success{
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+.toast-error{
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+.toast-success:hover, .toast-error:hover{
+  background-color: rgb(255, 255, 255);
+  color: #42275a;
+}
+.Toastify__close-button{
+  align-self: auto;
 }

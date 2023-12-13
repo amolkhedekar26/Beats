@@ -1,11 +1,3 @@
-/*-------------------------------------------------------------------
-|  🐼 React FC Input
-|
-|  🐯 Purpose: RE-USEABLE INPUT COMPOENT
-|
-|  🐸 Returns:  JSX
-*-------------------------------------------------------------------*/
-
 import cn from 'classnames'
 import { findInputError, isFormInvalid } from '../utils'
 import { useFormContext } from 'react-hook-form'
@@ -37,7 +29,7 @@ export const Input = ({
   return (
     <div className={cn('flex flex-col w-fit gap-2 mb-2', className)}>
       <div className="flex justify-between">
-        <label htmlFor={id} className="font-semibold capitalize">
+        <label htmlFor={id} className="font-semibold capitalize text-gray-800">
           {label}
         </label>
         <AnimatePresence mode="wa addressit" initial={false}>
